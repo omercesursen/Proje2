@@ -16,7 +16,7 @@ class OgrenciSistemi:
     def verileri_kaydet(self):
         with open("ogrenciler.json", "w", encoding="utf-8") as dosya:
             json.dump(self.veritabani, dosya, indent=4, ensure_ascii=False)
-        print("--- Veriler Dosyaya Kaydedildi! ---")
+        print("Veriler Dosyaya Kaydedildi ")
 
     def ekle(self):
         numara = input("Öğrenci No: ")
@@ -29,10 +29,10 @@ class OgrenciSistemi:
         notu = input("Not: ")
 
         self.veritabani[numara] = {"ad": ad, "soyad": soyad, "not": notu}
-        print("Listeye eklendi (Kaydetmeyi unutma).")
+        print("Listeye eklendi.")
 
     def listele(self):
-        print("\n--- Öğrenci Listesi (JSON Formatlı) ---")
+        print("\n Öğrenci Listesi  ")
         if self.veritabani:
             print(json.dumps(self.veritabani, indent=4, ensure_ascii=False))
         else:
@@ -50,7 +50,7 @@ class OgrenciSistemi:
         numara = input("Silinecek No: ")
         if numara in self.veritabani:
             del self.veritabani[numara]
-            print("Listeden silindi (Kalıcı olması için Kaydet seç).")
+            print("Listeden silindi.")
         else:
             print("Bulunamadı.")
 
@@ -75,7 +75,7 @@ class OgrenciSistemi:
         if yeni_not != "":
             self.veritabani[numara]['not'] = yeni_not
 
-        print("Güncellendi (Kaydetmeyi unutma).")
+        print("Güncellendi.")
 
 
 sistem = OgrenciSistemi()
@@ -102,3 +102,4 @@ while True:
     elif secim == "7":
         print("Çıkış yapılıyor...")
         break
+
