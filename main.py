@@ -8,14 +8,14 @@ class OgrenciSistemi:
 
     def verileri_yukle(self):
         try:
-            with open("ogrenciler.json", "r") as dosya:
+            with open("ogrenciler.json", "r" , encoding="utf-8" ) as dosya:
                 self.veritabani = json.load(dosya)
         except:
             self.veritabani = {}
 
     def verileri_kaydet(self):
-        with open("ogrenciler.json", "w") as dosya:
-            json.dump(self.veritabani, dosya)
+        with open("ogrenciler.json", "w", encoding="utf-8") as dosya:
+            json.dump(self.veritabani, dosya, indent=4, ensure_ascii=False)
         print("--- Veriler Dosyaya Kaydedildi! ---")
 
     def ekle(self):
